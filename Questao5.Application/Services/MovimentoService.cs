@@ -24,7 +24,7 @@ namespace Questao5.Application.Services
             IdEmpotencia idEmpotenciaExistente = UnitOfWork.Repository<IdEmpotencia>().Find(x => x.ChaveIdempotencia.Equals(request.IdMovimento));
             if (idEmpotenciaExistente != null)
             {
-                throw new InvalidOperationException(string.Concat(TipoErro.INVALID_TRANSACTION.GetDescription()," : ",Mensagem.OperacaoJaRealizada));
+                throw new InvalidOperationException(string.Concat(TipoErro.INVALID_TRANSACTION.GetDescription(),": ",Mensagem.OperacaoJaRealizada));
             }
 
             Validar(request);
