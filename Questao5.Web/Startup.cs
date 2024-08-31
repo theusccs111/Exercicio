@@ -20,7 +20,9 @@ using Questao5.Persistance;
 using Questao5.Persistance.Data;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace Questao5.Web
@@ -82,6 +84,7 @@ namespace Questao5.Web
         private static void InjetandoServicos(IServiceCollection services)
         {
             services.AddScoped<MovimentoService>();
+            services.AddScoped<ContaCorrenteService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -130,11 +133,11 @@ namespace Questao5.Web
             {
                 if (env.IsDevelopment())
                 {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Equatorial.MPE");
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Questao5 API v1");
                 }
                 else
                 {
-                    c.SwaggerEndpoint("/mpe/swagger/v1/swagger.json", "Equatorial.MPE");
+                    c.SwaggerEndpoint("/mpe/swagger/v1/swagger.json", "Questao5 API v1");
                 }
             });
 
@@ -153,6 +156,7 @@ namespace Questao5.Web
             service.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = apiName, Version = "v1", Description = "Management System" });
+
                 c.AddSecurityDefinition(
                     "Bearer",
                     new OpenApiSecurityScheme

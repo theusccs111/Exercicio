@@ -1,14 +1,13 @@
-﻿using Equatorial.MPE.Persistance.Repositories;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Questao5.Application.Interfaces.Persistance;
 using Questao5.Application.Interfaces.Persistance.Repositories;
 using Questao5.Persistance.Data;
+using Questao5.Persistance.Repositories;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Questao5.Persistance

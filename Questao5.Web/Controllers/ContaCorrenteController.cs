@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Questao5.Application.Services;
 using Questao5.Domain.Resources.Request;
+using Questao5.Domain.Resources.Response;
 using System;
 
 namespace Questao5.Web.Controllers
@@ -17,11 +18,13 @@ namespace Questao5.Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(SaldoContaCorrenteRequest request)
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(SaldoContaCorrenteResponse))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IActionResult Get(SaldoContaCorrenteRequest request)
         {
             try
             {
-                var resultado = _contaCorrenteService.Create(request);
+                var resultado = _contaCorrenteService.GetSaldo(request);
                 return Ok(resultado);
             }
             catch (Exception ex)

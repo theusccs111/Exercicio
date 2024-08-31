@@ -9,7 +9,7 @@ using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Equatorial.MPE.Persistance.Repositories
+namespace Questao5.Persistance.Repositories
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
@@ -143,7 +143,7 @@ namespace Equatorial.MPE.Persistance.Repositories
 
         public virtual void DetachEntryRange(IEnumerable<TEntity> entity)
         {
-            _context.Entry<IEnumerable<TEntity>>(entity).State = EntityState.Detached;
+            _context.Entry(entity).State = EntityState.Detached;
         }
 
         public virtual void ModifyEntry(TEntity entity)

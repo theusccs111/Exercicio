@@ -11,6 +11,6 @@ namespace Questao5.Domain.Resources.Request
         public Guid IdMovimento { get; set; }
         public Guid IdContaCorrente { get; set; }
         public decimal Valor { get; set; }
-        public char TipoMovimento { get; set; } // 'C' para crédito, 'D' para débito
+        public char TipoMovimento { get; set; }
     }
 }

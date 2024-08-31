@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Questao5.Application.Services;
 using Questao5.Domain.Resources.Request;
+using Questao5.Domain.Resources.Response;
 using System;
 
 namespace Questao5.Web.Controllers
@@ -17,6 +18,8 @@ namespace Questao5.Web.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(MovimentarContaCorrenteResponse))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult Post(MovimentarContaCorrenteRequest request)
         {
             try
