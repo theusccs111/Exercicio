@@ -12,5 +12,6 @@ namespace Questao5.Domain.Entites
         public int Numero { get; set; }
         public string Nome { get; set; }
         public bool Ativo { get; set; }
+        public virtual ICollection<Movimento> Movimentos { get; set; }
     }
 }

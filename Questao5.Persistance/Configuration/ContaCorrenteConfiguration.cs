@@ -14,6 +14,9 @@ namespace Questao5.Persistance.Configuration
         public void Configure(EntityTypeBuilder<ContaCorrente> builder)
         {
             builder.HasKey(c => c.IdContaCorrente);
+
+            builder.HasMany(c => c.Movimentos).WithOne(e => e.ContaCorrente).HasForeignKey(e => e.IdContaCorrente);
+
             builder.Property(c => c.Numero).IsRequired();
             builder.Property(c => c.Nome).IsRequired();
             builder.Property(c => c.Ativo).IsRequired();

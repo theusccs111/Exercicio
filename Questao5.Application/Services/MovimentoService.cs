@@ -80,7 +80,7 @@ namespace Questao5.Application.Services
 
             if (erro != null)
             {
-                throw new InvalidOperationException($"{erro.Type}: {erro.Message}");
+                throw new Exception($"{erro.Type}: {erro.Message}");
             }
         }
     }

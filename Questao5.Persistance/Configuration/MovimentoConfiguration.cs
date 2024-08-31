@@ -14,6 +14,7 @@ namespace Questao5.Persistance.Configuration
         public void Configure(EntityTypeBuilder<Movimento> builder)
         {
             builder.HasKey(m => m.IdMovimento);
+
             builder.Property(m => m.IdContaCorrente).IsRequired();
             builder.Property(m => m.DataMovimento).IsRequired();
             builder.Property(m => m.TipoMovimento).IsRequired();

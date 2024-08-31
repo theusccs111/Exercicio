@@ -8,20 +8,20 @@ namespace Questao5.Web.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MovimentoController : ControllerBase
+    public class ContaCorrenteController : ControllerBase
     {
-        private readonly MovimentoService _movimentoService;
-        public MovimentoController(MovimentoService movimentoService)
+        private readonly ContaCorrenteService _contaCorrenteService;
+        public ContaCorrenteController(ContaCorrenteService contaCorrenteService)
         {
-            _movimentoService = movimentoService;
+            _contaCorrenteService = contaCorrenteService;
         }
 
         [HttpPost]
-        public IActionResult Post(MovimentarContaCorrenteRequest request)
+        public IActionResult Post(SaldoContaCorrenteRequest request)
         {
             try
             {
-                var resultado = _movimentoService.Create(request);
+                var resultado = _contaCorrenteService.Create(request);
                 return Ok(resultado);
             }
             catch (Exception ex)
